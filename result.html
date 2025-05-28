@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: #222;
+        }
+
+        .fake {
+            color: #e74c3c;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .real {
+            color: #27ae60;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🧠 Fake News Detection Result</h2>
+        <p><strong>📝 News:</strong><br> {{ news }}</p>
+        <p><strong>📊 Prediction:</strong> 
+            <span class="{{ 'fake' if 'Fake' in prediction else 'real' }}">{{ prediction }}</span>
+        </p>
+        <p><strong>📈 Confidence Score:</strong> {{ confidence }}</p>
+        <a href="/">🔙 Try Another</a>
+    </div>
+</body>
+</html>
